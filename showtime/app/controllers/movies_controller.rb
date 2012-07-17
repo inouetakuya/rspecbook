@@ -16,7 +16,8 @@ class MoviesController < ApplicationController
   end
 
   def create
-    Movie.create!(params[:movie].merge(:genres => Genre.find(params[:genres])))
+    # Movie.create!(params[:movie].merge(:genres => Genre.find(params[:genres])))
+    Movie.create!(params[:movie])
     redirect_to movies_path
   end
 end

@@ -8,7 +8,7 @@ When /^I create a movie Caddyshack in the Comedy genre$/ do
   fill_in "Title", with: "Caddyshack"
   select "1980", from: "Release year"
   check "Comedy"
-  # click_button "Save"  # SQLite3::ConstraintException: constraint failed: INSERT INTO "genres_movies" ("movie_id", "genre_id") VALUES (1, 1) (ActiveRecord::StatementInvalid)
+  click_button "Save"  # SQLite3::ConstraintException: constraint failed: INSERT INTO "genres_movies" ("movie_id", "genre_id") VALUES (1, 1) (ActiveRecord::StatementInvalid)
 end
 
 Then /^Caddyshack should be in the Comedy genre$/ do
