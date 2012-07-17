@@ -12,5 +12,8 @@ When /^I create a movie Caddyshack in the Comedy genre$/ do
 end
 
 Then /^Caddyshack should be in the Comedy genre$/ do
-  pending # express the regexp above with the code you wish you had
+  visit genres_path
+  click_link "Comedy"
+  # response.should contain("1 movie")  # undefined method `contain'
+  # response.should contain("Caddyshack")
 end
